@@ -6,6 +6,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'itchyny/lightline.vim'
 call vundle#end()
 
 syntax enable
@@ -13,4 +14,12 @@ set background=dark
 colorscheme solarized
 
 filetype plugin indent on
+
+" status line
+set laststatus=2
+set noshowmode
+set noruler
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
 
