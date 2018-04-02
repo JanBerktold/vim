@@ -11,3 +11,9 @@ fi
 if [[ 'uname -s' == 'Darwin' ]]; then
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
+
+if [[ -x "$(command -v brew)" ]]; then
+	brew install tmux
+else
+	echo "Did not find any comnpatible package manager"
+fi
