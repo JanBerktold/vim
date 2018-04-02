@@ -17,6 +17,7 @@ fi
 if [[ -x "$(command -v brew)" ]]; then
 	brew install tmux
 	brew install cmake
+	brew install go
 else
 	echo "Did not find any comnpatible package manager"
 fi
@@ -28,3 +29,7 @@ if [[ -x "$(command -v brew)" ]]; then
 	cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
 	make ycm_core
 fi
+
+# setup Go for YouCompleteMe
+cd ~/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/gocode
+go build
