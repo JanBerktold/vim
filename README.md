@@ -1,2 +1,2 @@
-# vim
-vim setup
+# vim setup
+use install.sh to install
