@@ -22,13 +22,7 @@ else
 	echo "Did not find any comnpatible package manager"
 fi
 
-# install YouCompleteMe
-if [[ -x "$(command -v brew)" ]]; then
-	mkdir -p ~/.vim/bundle/YouCompleteMe/ycmbuild
-	cd ~/.vim/bundle/YouCompleteMe/ycmbuild
-	cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
-	make ycm_core
-fi
+~/.vim/bundle/YouCompleteMe/install.py --java-completer --go-completer
 
 # setup Go for YouCompleteMe
 cd ~/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/gocode
