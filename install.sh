@@ -23,10 +23,8 @@ fi
 
 # install YouCompleteMe
 if [[ -x "$(command -v brew)" ]]; then
-	cd ~/.vim/bundle
-	rm -rf YouCompleteMe/ycmbuild
-	mkdir YouCompleteMe/ycmbuild
-	cd YouCompleteMe/ycmbuild
+	mkdir -p ~/.vim/bundle/YouCompleteMe/ycmbuild
+	cd ~/.vim/bundle/YouCompleteMe/ycmbuild
 	cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
 	make ycm_core
 fi
