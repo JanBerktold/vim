@@ -7,7 +7,6 @@ if [ ! -d ~/.vim/bundle/Vundle.vim ] ; then
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
-vim +PluginInstall +qall
 
 # install homebrew if we're on os x
 if [[ 'uname -s' == 'Darwin' ]]; then
@@ -15,13 +14,26 @@ if [[ 'uname -s' == 'Darwin' ]]; then
 fi
 
 if [[ -x "$(command -v brew)" ]]; then
+	brew install mas 	# interface to app store
+	mas install 497799835 	# XCode
 	brew install tmux
 	brew install cmake
 	brew install go
+	brew install macvim --with-override-system-vim
+	brew install redis
+	brew install awscli
+	echo "Don't forget to setup the ~/.aws/credentials file"
+
+	brew install caskroom/cask/brew-cask
+	brew tap caskroom/versions
+	brew cask install sublime-text
+	brew cask install intellij-idea
+	brew cask install iterm2
 else
 	echo "Did not find any comnpatible package manager"
 fi
 
+vim +PluginInstall +qall
 ~/.vim/bundle/YouCompleteMe/install.py --java-completer --go-completer
 
 # setup Go for YouCompleteMe
