@@ -16,6 +16,7 @@ fi
 if [[ -x "$(command -v brew)" ]]; then
 	brew install mas 	# interface to app store
 	mas install 497799835 	# XCode
+	mas install 1295203466	# Microsoft Remote Desktop 10.1.8
 	brew install tmux
 	brew install cmake
 	brew install go
