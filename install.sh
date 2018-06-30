@@ -11,6 +11,9 @@ if [ ! -d ~/.vim/bundle/Vundle.vim ] ; then
 	cd $cwd
 fi
 
+brew_install_if_not_exists() {
+	brew list $1 || brew install $1
+}
 
 # install homebrew if we're on os x
 if [[ 'uname -s' == 'Darwin' ]]; then
@@ -22,13 +25,13 @@ if [[ -x "$(command -v brew)" ]]; then
 	mas install 497799835 	# XCode
 				# TODO: XCode has to be launched before installing macvim to install additional components.
 	mas install 1295203466	# Microsoft Remote Desktop 10.1.8
-	brew install tmux
-	brew install cmake
-	brew install go
-	brew install python
-	brew install macvim --with-override-system-vim
-	brew install redis
-	brew install awscli
+	brew_install_if_not_exists "tmux"
+	brew_install_if_not_exists "cmake"
+	brew_install_if_not_exists "go"
+	brew_install_if_not_exists "python"
+	brew_install_if_not_exists "redis"
+	brew_install_if_not_exists "awscli"
+	brew_install_if_not_exists "macvim"
 	echo "Don't forget to setup the ~/.aws/credentials file"
 
 	brew install caskroom/cask/brew-cask
@@ -43,6 +46,8 @@ if [[ -x "$(command -v brew)" ]]; then
 else
 	echo "Did not find any comnpatible package manager"
 fi
+
+go get github.com/fatih/hclfmt # required by vim-hclfmt
 
 vim +PluginInstall +qall
 cd ~/.vim/bundle/YouCompleteMe

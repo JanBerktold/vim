@@ -6,7 +6,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'itchyny/lightline.vim'
-Plugin 'airblade/vim-gitgutter'
+Plugin 'fatih/vim-hclfmt'
 call vundle#end()
 
 syntax enable
