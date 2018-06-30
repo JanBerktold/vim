@@ -18,6 +18,7 @@ filetype plugin indent on
 set laststatus=2
 set noshowmode
 set noruler
+set number
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ }

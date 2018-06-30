@@ -25,6 +25,7 @@ if [[ -x "$(command -v brew)" ]]; then
 	brew install tmux
 	brew install cmake
 	brew install go
+	brew install python
 	brew install macvim --with-override-system-vim
 	brew install redis
 	brew install awscli
