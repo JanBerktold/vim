@@ -1,4 +1,5 @@
 script: ./install.sh
 os: osx
+sudo: enabled
 
 
